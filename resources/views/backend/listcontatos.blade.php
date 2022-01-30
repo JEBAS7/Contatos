@@ -4,28 +4,37 @@
 
 <table id="example" class="display" style="width:100%">
         <thead>
+            <a href="{{ route('contato.frontend.contato') }}"><h1><b>Cadastrar Contato</b></h1></a>
             <tr>
                 <th>id</th>
                 <th>nome</th>
                 <th>email</th>
+                <th>fone</th>
+                <th>home</th>
                 <th>Editar</th>
                 <th>Deletar</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($users as $user)
+            @foreach($contatos as $contato)
                 <tr>
                     <td>
-                        {{ $user->id }}
+                        {{ $contato->id }}
                     </td>
                     <td>
-                        {{ $user->name }}
+                        {{ $contato->name }}
                     </td>
                     <td>
-                        {{ $user->email }}
+                        {{ $contato->email }}
                     </td>
-                    <td><a href="{{ route('user.backend.edit', $user->id) }}"class='btn btn-primary'>Editar</a></td>
-                    <td><a href="{{ route('user.backend.delete', $user->id) }}"class='btn btn-danger'>Deletar</a></td>
+                    <td>
+                        {{ $contato->fone }}
+                    </td>
+                    <td>
+                        {{ $contato->home }}
+                    </td>
+                    <td><a href="{{ route('contato.backend.edit', $contato->id) }}"class='btn btn-primary'>Editar</a></td>
+                    <td><a href="{{ route('contato.backend.delete', $contato->id) }}"class='btn btn-danger'>Deletar</a></td>
                 </tr>
             @endforeach
         </tbody>
@@ -34,6 +43,8 @@
                 <th>id</th>
                 <th>nome</th>
                 <th>email</th>
+                <th>fone</th>
+                <th>home</th>
                 <th>Editar</th>
                 <th>Deletar</th>
             </tr>

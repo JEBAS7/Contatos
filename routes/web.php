@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/deleteusers/{user_id}', [\App\Http\Controllers\UserController::class, 'delete'])->name("user.backend.delete");
-Route::put('/editusers/{user_id}', [\App\Http\Controllers\UserController::class, 'putedit'])->name("user.backend.put.edit");
-Route::get('/editusers/{user_id}', [\App\Http\Controllers\UserController::class, 'getedit'])->name("user.backend.edit");
-Route::get('/listusers', [\App\Http\Controllers\UserController::class, 'getListusers'])->name("user.backend.listusers");
-Route::get('/cadastro', [\App\Http\Controllers\UserController::class, "getCadastro"])->name("user.frontend.cadastro");
-Route::post('/cadastro', [\App\Http\Controllers\UserController::class, "postCadastro"])->name("user.post.cadastro");
+Route::get('/deletecontato/{contato_id}', [\App\Http\Controllers\ContatoController::class, 'delete'])->name("contato.backend.delete");
+Route::put('/editcontato/{contato_id}', [\App\Http\Controllers\ContatoController::class, 'putedit'])->name("contato.backend.put.edit");
+Route::get('/editcontato/{contato_id}', [\App\Http\Controllers\ContatoController::class, 'getedit'])->name("contato.backend.edit");
+Route::get('/listcontatos', [\App\Http\Controllers\ContatoController::class, 'getlistcontatos'])->name("contato.backend.listcontatos");
+Route::get('/contato', [\App\Http\Controllers\ContatoController::class, "getContato"])->name("contato.frontend.contato");
+Route::post('/contato', [\App\Http\Controllers\ContatoController::class, "postContato"])->name("contato.post.contato");

@@ -18,7 +18,7 @@ class UserController extends Controller
         User::insert([
             "name" => $request->nome,
             "email" => $request->email,
-            "password" => "1234",
+            "password" => "123",
         ]);
 
         return json_encode(User::all());
